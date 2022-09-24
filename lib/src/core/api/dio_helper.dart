@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 
+import '../../../container_injector.dart';
+import 'interceptors.dart';
+
 
 
 const String _CONTENT_TYPE = "Content-Type";
@@ -23,8 +26,8 @@ class DioHelper {
       connectTimeout: TIMEOUT,
       headers: headers,
     );
-    // dio.interceptors.add(sl<LogInterceptor>());
-    // dio.interceptors.add(sl<AppInterceptors>());
+    dio.interceptors.add(sl<LogInterceptor>());
+    dio.interceptors.add(sl<AppInterceptors>());
   }
 
   Future<Response> get({

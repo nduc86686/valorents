@@ -1,25 +1,27 @@
 import 'package:equatable/equatable.dart';
 
-class Agent extends Equatable {
-  String? uuid;
-  String? displayName;
-  String? description;
-  String? developerName;
-  String? displayIcon;
-  String? displayIconSmall;
-  String? bustPortrait;
-  String? fullPortrait;
-  String? fullPortraitV2;
-  String? killfeedPortrait;
-  String? assetPath;
-  bool? isFullPortraitRightFacing;
-  bool? isPlayableCharacter;
-  bool? isAvailableForTest;
-  bool? isBaseContent;
-  Role? role;
-  List<Abilities>? abilities;
+import 'entities.dart';
 
-  Agent({
+class Agent extends Equatable {
+  final String? uuid;
+  final String? displayName;
+  final String? description;
+  final String? developerName;
+  final String? displayIcon;
+  final String? displayIconSmall;
+  final String? bustPortrait;
+  final String? fullPortrait;
+  final String? fullPortraitV2;
+  final String? killfeedPortrait;
+  final String? assetPath;
+  final bool? isFullPortraitRightFacing;
+  final bool? isPlayableCharacter;
+  final bool? isAvailableForTest;
+  final bool? isBaseContent;
+  final Role? role;
+  final List<Abilities>? abilities;
+
+ const Agent({
     this.uuid,
     this.displayName,
     this.description,
@@ -60,49 +62,4 @@ class Agent extends Equatable {
         role,
         abilities,
       ];
-}
-
-class Role extends Equatable {
-  String? uuid;
-  String? displayName;
-  String? description;
-  String? displayIcon;
-  String? assetPath;
-
-  Role(
-      {this.uuid,
-      this.displayName,
-      this.description,
-      this.displayIcon,
-      this.assetPath});
-
-  @override
-  // TODO: implement props
-  List<Object?> get props =>
-      [uuid, displayName, description, displayIcon, assetPath];
-}
-
-class Abilities extends Equatable {
-  String? slot;
-  String? displayName;
-  String? description;
-  String? displayIcon;
-
-  Abilities({this.slot, this.displayName, this.description, this.displayIcon});
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [slot, displayName, description, displayIcon];
-}
-
-class MediaList extends Equatable {
-  int? id;
-  String? wwise;
-  String? wave;
-
-  MediaList({this.id, this.wwise, this.wave});
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id, wwise, wave];
 }

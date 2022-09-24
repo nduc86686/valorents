@@ -2,6 +2,9 @@
 
 import 'package:equatable/equatable.dart';
 
+import 'entities.dart';
+
+
 class Maps extends Equatable {
   String? uuid;
   String? displayName;
@@ -26,32 +29,19 @@ class Maps extends Equatable {
 
   @override
   // TODO: implement props
-  List<Object?> get props => [uuid,
-    displayName,
-    coordinates,
-    displayIcon,
-    listViewIcon,
-    splash,
-    assetPath,
-    mapUrl,
-    callouts];
+  List<Object?> get props => [
+        uuid,
+        displayName,
+        coordinates,
+        displayIcon,
+        listViewIcon,
+        splash,
+        assetPath,
+        mapUrl,
+        callouts
+      ];
 }
 
-class Callouts {
-  String? regionName;
-  String? superRegionName;
-  Location? location;
-
-  Callouts({this.regionName, this.superRegionName, this.location});
 
 
-}
 
-class Location {
-  var x;
-  var y;
-
-  Location({this.x, this.y});
-
-
-}
