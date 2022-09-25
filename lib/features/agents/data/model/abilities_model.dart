@@ -1,8 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../domain/entities/entities.dart';
+import '../../domain/entities/abilities.dart';
 
-part 'abilities.g.dart';
+
+
+
+
+part 'abilities_model.g.dart';
 
 @JsonSerializable()
 class AbilitiesModel extends Abilities {
@@ -12,10 +16,10 @@ class AbilitiesModel extends Abilities {
     String? description,
     String? displayIcon,
   }) : super(
-            slot: slot,
-            displayIcon: displayIcon,
-            displayName: displayName,
-            description: description);
+      slot: slot,
+      displayIcon: displayIcon,
+      displayName: displayName,
+      description: description);
 
   factory AbilitiesModel.fromJson(Map<String, dynamic> json) =>
       _$AbilitiesModelFromJson(json);

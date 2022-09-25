@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'abilities.dart';
+part of 'role_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AbilitiesModel _$AbilitiesModelFromJson(Map<String, dynamic> json) =>
-    AbilitiesModel(
-      slot: json['slot'] as String?,
+RoleModel _$RoleModelFromJson(Map<String, dynamic> json) => RoleModel(
+      uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
       description: json['description'] as String?,
       displayIcon: json['displayIcon'] as String?,
+      assetPath: json['assetPath'] as String?,
     );
 
-Map<String, dynamic> _$AbilitiesModelToJson(AbilitiesModel instance) =>
-    <String, dynamic>{
-      'slot': instance.slot,
+Map<String, dynamic> _$RoleModelToJson(RoleModel instance) => <String, dynamic>{
+      'uuid': instance.uuid,
       'displayName': instance.displayName,
       'description': instance.description,
       'displayIcon': instance.displayIcon,
+      'assetPath': instance.assetPath,
     };

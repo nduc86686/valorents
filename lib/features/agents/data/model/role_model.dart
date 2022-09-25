@@ -1,8 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:valo/features/agents/domain/entities/role.dart';
 
-import '../domain/entities/entities.dart';
 
-part 'role.g.dart';
+
+
+
+part 'role_model.g.dart';
 
 @JsonSerializable()
 class RoleModel extends Role {
