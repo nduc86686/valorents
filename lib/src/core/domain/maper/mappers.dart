@@ -48,12 +48,6 @@ extension AltShotgunStatsExtension on AltShotgunStats {
       shotgunPelletCount: shotgunPelletCount, burstRate: burstRate);
 }
 
-extension CalloutsExtension on Callouts {
-  Callouts toDomain() => Callouts(
-      location: location,
-      regionName: regionName,
-      superRegionName: superRegionName);
-}
 
 extension DamageRangesExtension on DamageRanges {
   DamageRanges toDomain() => DamageRanges(
@@ -68,9 +62,6 @@ extension GridPositionExtension on GridPosition {
   GridPosition toDomain() => GridPosition(column: column, row: row);
 }
 
-extension LocationExtension on Location {
-  Location toDomain() => Location(x: x, y: y);
-}
 
 extension MediaListExtension on MediaList {
   MediaList toDomain() => MediaList(id: id, wave: wave, wwise: wwise);
