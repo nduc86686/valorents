@@ -13,17 +13,33 @@ class AgentCubit extends Cubit<AgentsStates> {
     required this.agentsUseCase,
   }) : super(AgentsInitial());
 
-  Future<List<Agent>?> getLeagues() async {
+  Future<List<Agent>?> getAgents() async {
     emit(AgentsLoading());
+    await Future.delayed(const Duration(seconds: 1));
     final agents = await agentsUseCase(NoParams());
     List<Agent> ?agent;
     agents.fold(
       (left) => emit(AgentssLoadFailure(left.message)),
       (right) {
         agent=right;
-        emit(AgentsLoaded(agent!));
+        emit(AgentsLoaded(agents: agent!,indexTab: 0));
       },
     );
     return agent;
+  }
+
+  int currentIndex=0;
+  void changeTab({int? index,String ?role})async{
+    final listAgent=await getAgents();
+
+    if(role?.toLowerCase()=='all'){
+      final listAgent=await getAgents();
+      emit(AgentsLoaded().copyWith(indexTab: index,agents: listAgent));
+    }
+    else{
+      final agent=listAgent?.where((element) => element.role?.displayName?.toLowerCase()==role?.toLowerCase()).toList();
+      emit(AgentsLoaded().copyWith(indexTab: index,agents: agent));
+    }
+
   }
 }

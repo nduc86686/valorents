@@ -1,4 +1,5 @@
 import 'package:valo/container_injector.dart';
+import 'package:valo/features/agents/presentation/cubit/agent_cubit.dart';
 
 import '../../src/core/api/dio_helper.dart';
 import '../../src/core/network/net_work_info.dart';
@@ -18,5 +19,8 @@ void initFixture() {
   );
   sl.registerLazySingleton(
     () => AgentsUseCase(aentsRepository: sl<AgentsRepositoryImpl>()),
+  );
+  sl.registerLazySingleton(
+    () => AgentCubit(agentsUseCase: sl<AgentsUseCase>()),
   );
 }
