@@ -5,6 +5,7 @@ import 'package:valo/screen2/main2.dart';
 import 'container_injector.dart';
 import 'features/agents/presentation/cubit/agent_cubit.dart';
 import 'features/agents/presentation/screen/agent_screen.dart';
+import 'features/map/presentation/cubit/maps_cubit.dart';
 
 class Routes {
   static const String agents = "agents";
@@ -20,8 +21,16 @@ class AppRouter {
     switch (settings.name) {
         case Routes.home:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => sl<AgentCubit>()..getAgents(),
+          builder: (context) => MultiBlocProvider(
+
+            providers: [
+              BlocProvider (
+                create: (context) => sl<AgentCubit>()..getAgents(),
+              ),
+              BlocProvider (
+                create: (context) => sl<MapsCubit>()..loadMap(),
+              ),
+            ],
             child: const MainScreen(),
           ),
         );

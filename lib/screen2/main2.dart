@@ -9,13 +9,14 @@ import 'package:valo/constants/app_assets.dart';
 import 'package:valo/network/review_service.dart';
 import 'package:valo/network/shared_preferences_helper.dart';
 
-import 'package:valo/screens/maps_screen.dart';
+
 import 'package:valo/screens/ranks_screen.dart';
 import 'package:valo/screens/weapons_screen.dart';
 
 import '../adsmodule/ad_banner_listener.dart';
 import '../adsmodule/ad_helper.dart';
 import '../features/agents/presentation/screen/agent_screen.dart';
+import '../features/map/presentation/pages/map_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

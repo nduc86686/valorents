@@ -7,9 +7,9 @@ part of 'agent_state.dart';
 // **************************************************************************
 
 abstract class _$AgentsLoadedCWProxy {
-  AgentsLoaded agents(List<Agent> agents);
+  AgentsLoaded agents(List<Agent>? agents);
 
-  AgentsLoaded indexTab(int indexTab);
+  AgentsLoaded indexTab(int? indexTab);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AgentsLoaded(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -30,10 +30,10 @@ class _$AgentsLoadedCWProxyImpl implements _$AgentsLoadedCWProxy {
   const _$AgentsLoadedCWProxyImpl(this._value);
 
   @override
-  AgentsLoaded agents(List<Agent> agents) => this(agents: agents);
+  AgentsLoaded agents(List<Agent>? agents) => this(agents: agents);
 
   @override
-  AgentsLoaded indexTab(int indexTab) => this(indexTab: indexTab);
+  AgentsLoaded indexTab(int? indexTab) => this(indexTab: indexTab);
 
   @override
 
@@ -48,14 +48,14 @@ class _$AgentsLoadedCWProxyImpl implements _$AgentsLoadedCWProxy {
     Object? indexTab = const $CopyWithPlaceholder(),
   }) {
     return AgentsLoaded(
-      agents: agents == const $CopyWithPlaceholder() || agents == null
+      agents: agents == const $CopyWithPlaceholder()
           ? _value.agents
           // ignore: cast_nullable_to_non_nullable
-          : agents as List<Agent>,
-      indexTab: indexTab == const $CopyWithPlaceholder() || indexTab == null
+          : agents as List<Agent>?,
+      indexTab: indexTab == const $CopyWithPlaceholder()
           ? _value.indexTab
           // ignore: cast_nullable_to_non_nullable
-          : indexTab as int,
+          : indexTab as int?,
     );
   }
 }
