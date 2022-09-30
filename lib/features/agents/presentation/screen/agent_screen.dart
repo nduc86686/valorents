@@ -6,6 +6,7 @@ import 'package:valo/constants/app_colors.dart';
 
 import '../../../../adsmodule/ad_banner_listener.dart';
 import '../../../../adsmodule/ad_helper.dart';
+import '../../../../app_router.dart';
 import 'widget/widget_agent.dart';
 
 class AgentsScreen extends StatefulWidget {
@@ -32,13 +33,18 @@ class _AgentsScreenState extends State<AgentsScreen> implements AdBannerListener
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 50.h, left: 13.w),
-                child: const Text(
-                  'Agents',
-                  style: TextStyle(
-                      color: white, fontSize: 30, fontFamily: 'Valorant'),
-                  textAlign: TextAlign.start,
+              InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, Routes.detailt_agent);
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(top: 50.h, left: 13.w),
+                  child: const Text(
+                    'Agents',
+                    style: TextStyle(
+                        color: white, fontSize: 30, fontFamily: 'Valorant'),
+                    textAlign: TextAlign.start,
+                  ),
                 ),
               ),
 

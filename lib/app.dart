@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: Platform.isAndroid ? 'Guide for Valo' : 'Handbook for Valorant',
         debugShowCheckedModeBanner: false,
-        home: const MainScreen(),
+
         initialRoute: Routes.home,
         onGenerateRoute: AppRouter.routesGenerator,
         theme: AppTheme().valoTheme,

@@ -1,0 +1,440 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AgentsDetails extends StatefulWidget {
+  AgentsDetails({Key? key}) : super(key: key);
+
+  @override
+  State<AgentsDetails> createState() => _AgentsDetailsState();
+}
+
+class _AgentsDetailsState extends State<AgentsDetails> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return  WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          elevation: 0.0,
+          titleSpacing: 10.0,
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          title: Text(
+            "Agents Details",
+            style: GoogleFonts.bowlbyOneSc(
+                color: NowUIColors.beyaz,
+                fontSize: 20,
+                fontWeight: FontWeight.w500),
+          ),
+          leading: IconButton(
+            icon: Image.asset('assets/images/back.png'),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ),
+        backgroundColor: NowUIColors.homecolorr,
+        body: Stack(
+          children: <Widget>[
+            new Container(
+              height: 389,
+              width: 390,
+              decoration: new BoxDecoration(
+                  image: new DecorationImage(
+                      image: new AssetImage(
+                        "assets/images/agentdetailsbg.png",
+                      ),
+                      fit: BoxFit.fill)),
+            ),
+            SingleChildScrollView(
+              child: new Container(
+                padding: new EdgeInsets.all(20.0),
+                color: Colors.transparent,
+                child: new Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 50,
+                    ),
+                    new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset(
+                          "assets/images/agents/jett.png",
+                          height: 350,
+                          width: 350,
+                        ),
+                      ],
+                    ),
+                    new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Origin:",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.redhome,
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 170,
+                        ),
+                        Text(
+                          "🇺🇸 United States",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.beyaz,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Divider(
+                      color: NowUIColors.beyaz,
+                      thickness: 1.0,
+                    ),
+                    new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Type:",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.redhome,
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 200,
+                        ),
+                        Text(
+                          "🔥 Controller",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.beyaz,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Divider(
+                      color: NowUIColors.beyaz,
+                      thickness: 1.0,
+                    ),
+                    new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Points For Ultimate:",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.redhome,
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 180,
+                        ),
+                        Text(
+                          "6",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.beyaz,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Divider(
+                      color: NowUIColors.beyaz,
+                      thickness: 1.0,
+                    ),
+                    new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Description:",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.redhome,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      child: Text(
+                        "Brimstone’s orbital arsenal ensures his squad always has the advantage. His ability to deliver utility precisely and safely make him the unmatched boots-on-the-ground commander.",
+                        style: GoogleFonts.bowlbyOneSc(
+                          color: NowUIColors.beyaz,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Divider(
+                      color: NowUIColors.beyaz,
+                      thickness: 1.0,
+                    ),
+                    SizedBox(height: 15),
+                    new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Abilities:",
+                          style: GoogleFonts.bowlbyOneSc(
+                            color: NowUIColors.redhome,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Card(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: NowUIColors.redhome,
+                        ),
+                      ),
+                      child: new InkWell(
+                        onTap: () {},
+                        child: Container(
+                          color: NowUIColors.homecolorr,
+                          height: 174,
+                          width: 308,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                bottom: 36.0, left: 12, top: 10),
+                            child: Wrap(
+                              spacing: 30,
+                              children: <Widget>[
+                                Column(
+                                  children: <Widget>[
+                                    new Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "Incendiary:",
+                                          style: GoogleFonts.bowlbyOneSc(
+                                            color: NowUIColors.redhome,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    new Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          "assets/images/incen.png",
+                                          height: 35,
+                                          width: 35,
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          "Type:",
+                                          style: GoogleFonts.bowlbyOneSc(
+                                            color: NowUIColors.redhome,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          "Damage",
+                                          style: GoogleFonts.bowlbyOneSc(
+                                            color: NowUIColors.beyaz,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    new Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        SizedBox(
+                                          width: 40,
+                                        ),
+                                        Text(
+                                          "Cost:",
+                                          style: GoogleFonts.bowlbyOneSc(
+                                            color: NowUIColors.redhome,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          "300",
+                                          style: GoogleFonts.bowlbyOneSc(
+                                            color: NowUIColors.beyaz,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    new Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "Description:",
+                                          style: GoogleFonts.bowlbyOneSc(
+                                            color: NowUIColors.redhome,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      child: Text(
+                                        "Brimstone’s orbital arsenal ensures his squad always has the advantage. His ability to deliver utility precisely and safely make him the unmatched boots-on-the-ground commander.",
+                                        style: GoogleFonts.bowlbyOneSc(
+                                          color: NowUIColors.beyaz,
+                                          fontSize: 10,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomeShape extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.lineTo(size.width * 2 / 3, 0.0);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0.0, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomeShape oldClipper) => false;
+}
+
+class NowUIColors {
+  static const Color black = Color(0xFF000000);
+
+  static const Color homecolorr = Color(0xFF0F1923);
+  static const Color redhome = Color(0xFFFF4655);
+
+  static const Color statusbar = Color(0xFF252836);
+
+  static const Color textField = Color(0xFF1F1D2B);
+
+  static const Color card = Color(0xFFF252836);
+  static const Color beyaz = Color(0xFFFFFFFF);
+  static const Color dashbeyaz = Color(0xFFFFEFEFE);
+
+  static const Color signupbtn = Color(0xFFf5f5f5);
+
+  static const Color anasite = Color(0xFF377dff);
+  static const Color textColor = Color(0xFF8A8D9F);
+  static const Color morcuk = Color(0xFF676ABB);
+  static const Color altmenubg = Color(0xFF21325B);
+  static const Color bartrn = Color(0xFFfd7e14);
+  static const Color loginbg = Color(0xFF16151E);
+
+  static const Color defaultColor = Color.fromRGBO(136, 136, 136, 1.0);
+
+  static const Color primary = Color.fromRGBO(249, 99, 50, 1.0);
+
+  static const Color secondary = Color.fromRGBO(68, 68, 68, 1.0);
+
+  static const Color label = Color.fromRGBO(254, 36, 114, 1.0);
+
+  static const Color neutral = Color.fromRGBO(255, 255, 255, 0.2);
+
+  static const Color tabs = Color.fromRGBO(222, 222, 222, 0.3);
+
+  static const Color info = Color.fromRGBO(44, 168, 255, 1.0);
+
+  static const Color error = Color.fromRGBO(255, 54, 54, 1.0);
+
+  static const Color success = Color.fromRGBO(24, 206, 15, 1.0);
+
+  static const Color warning = Color.fromRGBO(255, 178, 54, 1.0);
+
+  static const Color text = Color.fromRGBO(44, 44, 44, 1.0);
+
+  static const Color bgColorScreen = Color.fromRGBO(255, 255, 255, 1.0);
+
+  static const Color border = Color.fromRGBO(231, 231, 231, 1.0);
+
+  static const Color inputSuccess = Color.fromRGBO(27, 230, 17, 1.0);
+
+  static const Color input = Color.fromRGBO(220, 220, 220, 1.0);
+
+  static const Color inputError = Color.fromRGBO(255, 54, 54, 1.0);
+
+  static const Color muted = Color.fromRGBO(136, 152, 170, 1.0);
+
+  // static const Color text = Color.fromRGBO(50, 50, 93, 1.0);
+
+  static const Color time = Color.fromRGBO(154, 154, 154, 1.0);
+
+  static const Color priceColor = Color.fromRGBO(234, 213, 251, 1.0);
+
+  static const Color active = Color.fromRGBO(249, 99, 50, 1.0);
+
+  static const Color buttonColor = Color.fromRGBO(156, 38, 176, 1.0);
+
+  static const Color placeholder = Color.fromRGBO(159, 165, 170, 1.0);
+
+  static const Color switchON = Color.fromRGBO(249, 99, 50, 1.0);
+
+  static const Color switchOFF = Color.fromRGBO(137, 137, 137, 1.0);
+
+  static const Color gradientStart = Color.fromRGBO(107, 36, 170, 1.0);
+
+  static const Color gradientEnd = Color.fromRGBO(172, 38, 136, 1.0);
+
+  static const Color socialFacebook = Color.fromRGBO(59, 89, 152, 1.0);
+
+  static const Color socialTwitter = Color.fromRGBO(91, 192, 222, 1.0);
+
+  static const Color socialDribbble = Color.fromRGBO(234, 76, 137, 1.0);
+}

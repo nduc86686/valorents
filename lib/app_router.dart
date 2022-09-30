@@ -4,36 +4,40 @@ import 'package:valo/screen2/main2.dart';
 
 import 'container_injector.dart';
 import 'features/agents/presentation/cubit/agent_cubit.dart';
-import 'features/agents/presentation/screen/agent_screen.dart';
+import 'features/agents/presentation/screen/agent_details.dart';
 import 'features/map/presentation/cubit/maps_cubit.dart';
 
 class Routes {
   static const String agents = "agents";
-  static const String home = "home";
+  static const String home = "/";
   static const String soccer = "soccer";
   static const String fixtures = "fixtures";
   static const String standings = "standings";
   static const String fixture = "fixture";
+  static const String detailt_agent = "/detailtagent";
 }
 
 class AppRouter {
   static Route routesGenerator(RouteSettings settings) {
     switch (settings.name) {
         case Routes.home:
-        return MaterialPageRoute(
+         return MaterialPageRoute(
           builder: (context) => MultiBlocProvider(
-
             providers: [
-              BlocProvider (
+              BlocProvider(
                 create: (context) => sl<AgentCubit>()..getAgents(),
               ),
-              BlocProvider (
+              BlocProvider(
                 create: (context) => sl<MapsCubit>()..loadMap(),
               ),
             ],
             child: const MainScreen(),
           ),
         );
+         break;
+      case Routes.detailt_agent:
+        return MaterialPageRoute(builder: (context) => AgentsDetails());
+      break;
     }
     return MaterialPageRoute(builder: (context) => const NoRouteFound());
   }
