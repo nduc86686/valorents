@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_mobile_ads/src/ad_containers.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:valo/constants/app_assets.dart';
 import 'package:valo/network/review_service.dart';
@@ -12,6 +13,8 @@ import 'package:valo/screens/maps_screen.dart';
 import 'package:valo/screens/ranks_screen.dart';
 import 'package:valo/screens/weapons_screen.dart';
 
+import '../adsmodule/ad_banner_listener.dart';
+import '../adsmodule/ad_helper.dart';
 import '../features/agents/presentation/screen/agent_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -21,7 +24,8 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
+class _MainScreenState extends State<MainScreen>
+    with TickerProviderStateMixin {
   List<Widget> tabs = [
     const AgentsScreen(),
     const MapsScreen(),
@@ -34,6 +38,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
   // Assets
   final AppAssets _appAssets = AppAssets();
+
+  // TODO: Add _bannerAd
+  late BannerAd _bannerAd;
 
   @override
   void initState() {
@@ -53,13 +60,22 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    AdHelper.disposeBannerAd();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: PersistentTabView(
         context,
         navBarStyle: NavBarStyle.style7,
         backgroundColor:
-        Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
+        Theme
+            .of(context)
+            .bottomNavigationBarTheme
+            .backgroundColor!,
         screens: tabs,
         items: [
           // Agents
