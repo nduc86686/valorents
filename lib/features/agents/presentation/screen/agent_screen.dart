@@ -22,7 +22,7 @@ class _AgentsScreenState extends State<AgentsScreen> implements AdBannerListener
   void initState() {
     AdHelper.initBannerAd(this);
     AdHelper.loadBannerAd(adSize: AdSize.fullBanner, adBannerListener: this);
-    // AdHelper.showBannerAd();
+    AdHelper.showBannerAd();
     super.initState();
   }
   @override
@@ -54,7 +54,7 @@ class _AgentsScreenState extends State<AgentsScreen> implements AdBannerListener
               const AgentListWidget(),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
+                child: SizedBox(
                     width: AdHelper.bannerAd?.size.width.toDouble(),
                     height: AdHelper.bannerAd?.size.height.toDouble(),
                     child: Container(

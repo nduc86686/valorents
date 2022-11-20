@@ -12,12 +12,12 @@ class RanksList extends StatelessWidget {
   Widget build(BuildContext context) {
     // Waiting
     if (snapshot.connectionState == ConnectionState.waiting) {
-      return Center(
-          // Circular Progress Bar
-          child: SizedBox(
-              height: 100.h,
-              width: 50.w,
-              child: const CircularProgressIndicator()));
+      return const Expanded(
+          child: Center(
+              child: SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator())));
       // Done
     } else if (snapshot.connectionState == ConnectionState.done) {
       // Done but has error

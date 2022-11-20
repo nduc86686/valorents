@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../../../../../app_router.dart';
 import '../../cubit/agent_cubit.dart';
 import '../../cubit/agent_state.dart';
@@ -28,12 +27,12 @@ class AgentListWidget extends StatelessWidget {
               itemCount: state.agents!.length,
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
-                  onTap: (){
+                  onTap: () {
                     Navigator.pushNamed(context, Routes.detailt_agent);
                   },
                   child: Padding(
                     padding:
-                    EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+                        EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
                     child: AgentsCard(
                       agent: state.agents![index],
                       index: index,
@@ -44,8 +43,13 @@ class AgentListWidget extends StatelessWidget {
             ),
           );
         }
-        return const Expanded(
-            flex:11,child: CircularProgressIndicator());
+        return Expanded(
+            flex: 11,
+            child: Center(
+                child: Container(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator())));
       },
     );
   }

@@ -14,11 +14,12 @@ class ListMaps extends StatelessWidget {
     return BlocBuilder<MapsCubit, MapsState>(
       builder: (context, state) {
         if (state is MapsLoading) {
-          return Center(
-              child: SizedBox(
-                  height: 100.h,
-                  width: 50.w,
-                  child: const CircularProgressIndicator()));
+          return Expanded(
+              child: Center(
+                  child: Container(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator())));
         }
         if (state is MapsLoaed) {
           return Expanded(
