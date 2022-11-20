@@ -4,6 +4,7 @@ import 'package:valo/screen2/main2.dart';
 
 import 'container_injector.dart';
 import 'features/agents/presentation/cubit/agent_cubit.dart';
+import 'features/agents/presentation/cubit/detail_agent_cubit/detail_agents_cubit.dart';
 import 'features/agents/presentation/screen/agent_details.dart';
 import 'features/map/presentation/cubit/maps_cubit.dart';
 
@@ -20,8 +21,8 @@ class Routes {
 class AppRouter {
   static Route routesGenerator(RouteSettings settings) {
     switch (settings.name) {
-        case Routes.home:
-         return MaterialPageRoute(
+      case Routes.home:
+        return MaterialPageRoute(
           builder: (context) => MultiBlocProvider(
             providers: [
               BlocProvider(
@@ -34,10 +35,15 @@ class AppRouter {
             child: const MainScreen(),
           ),
         );
-         break;
       case Routes.detailt_agent:
-        return MaterialPageRoute(builder: (context) => AgentsDetails());
-      break;
+        var uuid = settings.arguments as String;
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider.value(
+                  value: sl<DetailAgentsCubit>(),
+                  child: AgentsDetails(
+                    uuid: uuid,
+                  ),
+                ));
     }
     return MaterialPageRoute(builder: (context) => const NoRouteFound());
   }

@@ -28,7 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   analyzer: ^4.1.0
-  cached_network_image: ^3.2.0
+  cached_network_image: ^3.0.0
   change_app_package_name: ^1.1.0
   copy_with_extension: ^4.0.3
   copy_with_extension_gen: ^4.0.3

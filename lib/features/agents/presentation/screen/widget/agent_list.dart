@@ -28,7 +28,8 @@ class AgentListWidget extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, Routes.detailt_agent);
+                    // Navigator.pushNamed(context, Routes.detailt_agent);
+                    Navigator.of(context, rootNavigator: true).pushNamed( Routes.detailt_agent,arguments: '${state.agents?[index].uuid}');
                   },
                   child: Padding(
                     padding:

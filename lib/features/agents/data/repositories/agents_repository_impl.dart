@@ -8,7 +8,6 @@ import '../../../../src/core/network/net_work_info.dart';
 import '../../domain/repositories/agents_responsitory.dart';
 import '../datasources/agents_data_source.dart';
 
-
 class AgentsRepositoryImpl implements AgentsRepository {
   final AgentsDataSource agentsDataSource;
   final NetworkInfo networkInfo;
@@ -19,7 +18,7 @@ class AgentsRepositoryImpl implements AgentsRepository {
   });
 
   @override
-  Future<Either<Failure, List<Agent>>> getAgents() async{
+  Future<Either<Failure, List<Agent>>> getAgents() async {
     // TODO: implement getAgents
     if (await networkInfo.isConnected) {
       try {
@@ -33,4 +32,17 @@ class AgentsRepositoryImpl implements AgentsRepository {
     }
   }
 
+  @override
+  Future<Either<Failure, Agent>> detailAgents({String? uuid}) async {
+    if (await networkInfo.isConnected) {
+      try {
+        final result = await agentsDataSource.getDetailAgents(uuid!);
+        return Right(result);
+      } on DioError catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return Left(DataSource.networkConnectError.getFailure());
+    }
+  }
 }

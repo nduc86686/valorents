@@ -7,6 +7,7 @@ import '../model/agents_model.dart';
 
 abstract class AgentsDataSource {
   Future<List<AgentModel>> getAgents();
+  Future<AgentModel> getDetailAgents(String uuid);
 }
 class AgentsDataSourceImpl implements AgentsDataSource {
   final DioHelper dioHelper;
@@ -28,6 +29,20 @@ class AgentsDataSourceImpl implements AgentsDataSource {
     rethrow;
     }
   }
+
+  @override
+  Future<AgentModel> getDetailAgents(String uuid) async {
+    try {
+      final response =
+          await dioHelper.get(url: 'v1/agents/$uuid');
+      print('resss ${response.data}');
+     AgentModel leagues = AgentModel.fromJson(response.data["data"]);
+      return leagues;
+    } catch (error) {
+      rethrow;
+    }
+  }
+
 
 }
 
